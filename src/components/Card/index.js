@@ -1,9 +1,14 @@
-import React from "react";
+import { DeleteOutline } from "@material-ui/icons";
+import React, { useContext } from "react";
 import { Draggable } from "react-beautiful-dnd";
+
+import storeApi from "../../utils/storeApi";
 
 import "./styles.scss";
 
-export default function Card({ card, index }) {
+export default function Card({ card, index, listId }) {
+  const { removeCard } = useContext(storeApi);
+
   return (
     <Draggable draggableId={card.id} index={index}>
       {(provided) => (
@@ -14,6 +19,13 @@ export default function Card({ card, index }) {
         >
           <div className="card-content" elevation={0}>
             {card.title}
+            <button
+              onClick={() => {
+                removeCard(index, listId);
+              }}
+            >
+              <DeleteOutline />
+            </button>
           </div>
         </div>
       )}

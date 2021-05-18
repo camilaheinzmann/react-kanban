@@ -28,7 +28,6 @@ export default function InputCard({ setOpen, listId, type }) {
       <div className="input-card-container">
         <textarea
           onChange={handleOnChange}
-          // onBlur={() => setOpen(false)}
           value={title}
           className="input-text"
           placeholder={

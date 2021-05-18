@@ -18,8 +18,6 @@ export default function Home() {
       return;
     }
 
-    console.log("clicou");
-
     const newCardId = uuid();
     const newCard = {
       id: newCardId,
@@ -28,6 +26,21 @@ export default function Home() {
 
     const list = data.lists[listId];
     list.cards = [...list.cards, newCard];
+
+    const newState = {
+      ...data,
+      lists: {
+        ...data.lists,
+        [listId]: list,
+      },
+    };
+    setData(newState);
+  };
+
+  const removeCard = (index, listId) => {
+    const list = data.lists[listId];
+
+    list.cards.splice(index, 1);
 
     const newState = {
       ...data,
@@ -135,7 +148,9 @@ export default function Home() {
   };
 
   return (
-    <StoreApi.Provider value={{ addMoreCard, addMoreList, updateListTitle }}>
+    <StoreApi.Provider
+      value={{ addMoreCard, addMoreList, updateListTitle, removeCard }}
+    >
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="app" type="list" direction="horizontal">
           {(provided) => (
