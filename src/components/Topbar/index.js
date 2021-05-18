@@ -12,9 +12,7 @@ export default function Topbar({ setOpenSideMenu }) {
             <BarChart />
             <h1>CamKanban</h1>
           </div>
-          <button onClick={() => setOpenSideMenu(true)}>
-            Change Background
-          </button>
+          <button onClick={() => setOpenSideMenu(true)}>Background</button>
         </div>
       </nav>
     </div>
