@@ -30,7 +30,7 @@ export default function Title({ title, listId }) {
             onChange={handleOnChange}
             onBlur={handleOnBlur}
             onKeyPress={(e) => {
-              if (e.key === 'Enter') {
+              if (e.key === "Enter") {
                 handleOnBlur();
               }
               return;

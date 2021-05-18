@@ -8,12 +8,18 @@ import List from "../../components/List";
 import store from "../../utils/store";
 import StoreApi from "../../utils/storeApi";
 
-import './styles.scss'
+import "./styles.scss";
 
 export default function Home() {
   const [data, setData] = useState(store);
 
   const addMoreCard = (title, listId) => {
+    if (!title) {
+      return;
+    }
+
+    console.log("clicou");
+
     const newCardId = uuid();
     const newCard = {
       id: newCardId,
@@ -34,6 +40,10 @@ export default function Home() {
   };
 
   const addMoreList = (title) => {
+    if (!title) {
+      return;
+    }
+
     const newListId = uuid();
     const newList = {
       id: newListId,

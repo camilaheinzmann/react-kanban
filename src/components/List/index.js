@@ -13,7 +13,9 @@ export default function List({ list, index }) {
       {(provided) => (
         <div {...provided.draggableProps} ref={provided.innerRef}>
           <div className="list-cards" {...provided.dragHandleProps}>
-            <Title title={list.title} listId={list.id} />
+            <div className="title-list">
+              <Title title={list.title} listId={list.id} />
+            </div>
             <div className="container-cards">
               <Droppable droppableId={list.id} type="task">
                 {(provided) => (

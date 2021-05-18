@@ -13,16 +13,14 @@ export default function InputCard({ setOpen, listId, type }) {
     setTitle(e.target.value);
   };
 
-  const handleBtnConfirm = (e) => {
+  const handleBtnConfirm = () => {
     if (type === "card") {
       addMoreCard(title, listId);
-      setTitle("");
-      setOpen(false);
     } else {
       addMoreList(title);
-      setTitle("");
-      setOpen(false);
     }
+    setOpen(false);
+    setTitle("");
   };
 
   return (
@@ -30,7 +28,7 @@ export default function InputCard({ setOpen, listId, type }) {
       <div className="input-card-container">
         <textarea
           onChange={handleOnChange}
-          onBlur={() => setOpen(false)}
+          // onBlur={() => setOpen(false)}
           value={title}
           className="input-text"
           placeholder={
