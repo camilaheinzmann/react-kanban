@@ -4,12 +4,13 @@ import { Drawer, Grow } from "@material-ui/core";
 import colors from "../../utils/colors";
 import { getImages } from "../../utils/imageApi";
 
-import './styles.scss';
+import "./styles.scss";
 
 export default function SideMenu({
   openSideMenu,
   setOpenSideMenu,
   setBackground,
+  background,
 }) {
   const [openOptionColor, setOpenOptionColor] = useState(false);
   const [openOptionImage, setOpenOptionImage] = useState(false);
@@ -31,10 +32,10 @@ export default function SideMenu({
         anchor="right"
         onClose={() => setOpenSideMenu(false)}
       >
-        <div className='drawer'>
+        <div className="drawer">
           <div className="menu">
             <div
-              className='background-box'
+              className="background-box"
               style={{
                 backgroundImage: `url('https://live.staticflickr.com/65535/33792125018_8e6a234766_b.jpg')`,
                 backgroundSize: "cover",
@@ -76,7 +77,12 @@ export default function SideMenu({
                         backgroundRepeat: "no-repeat",
                       }}
                       key={index}
-                      onClick={() => setBackground(image.full)}
+                      onClick={() =>
+                        setBackground({
+                          color: background.color,
+                          image: `url(${image.full})`,
+                        })
+                      }
                     ></div>
                   );
                 })}
@@ -93,7 +99,12 @@ export default function SideMenu({
                         background: color,
                       }}
                       key={index}
-                      onClick={() => setBackground(color)}
+                      onClick={() =>
+                        setBackground({
+                          color: color,
+                          image: "none",
+                        })
+                      }
                     >
                       {color}
                     </div>

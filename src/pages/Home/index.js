@@ -184,7 +184,9 @@ export default function Home() {
 
                 return <List list={list} key={listId} index={index} />;
               })}
-              <InputContainer type="list" />
+              <div>
+                <InputContainer type="list" />
+              </div>
               {provided.placeholder}
             </div>
           )}
