@@ -52,6 +52,20 @@ export default function Home() {
     setData(newState);
   };
 
+  const updateCardTitle = (title, index, listId) => {
+    const list = data.lists[listId];
+    list.cards[index].title = title;
+
+    const newState = {
+      ...data,
+      lists: {
+        ...data.lists,
+        [listId]: list,
+      },
+    };
+    setData(newState);
+  };
+
   const addMoreList = (title) => {
     if (!title) {
       return;
@@ -149,7 +163,13 @@ export default function Home() {
 
   return (
     <StoreApi.Provider
-      value={{ addMoreCard, addMoreList, updateListTitle, removeCard }}
+      value={{
+        addMoreCard,
+        addMoreList,
+        updateListTitle,
+        removeCard,
+        updateCardTitle,
+      }}
     >
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="app" type="list" direction="horizontal">
