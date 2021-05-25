@@ -9,7 +9,7 @@ import "./styles.scss";
 export default function SideMenu({
   openSideMenu,
   setOpenSideMenu,
-  setBackground,
+  changeBackground,
   background,
 }) {
   const [openOptionColor, setOpenOptionColor] = useState(false);
@@ -78,7 +78,7 @@ export default function SideMenu({
                       }}
                       key={index}
                       onClick={() =>
-                        setBackground({
+                        changeBackground({
                           color: background.color,
                           image: `url(${image.full})`,
                         })
@@ -100,7 +100,7 @@ export default function SideMenu({
                       }}
                       key={index}
                       onClick={() =>
-                        setBackground({
+                        changeBackground({
                           color: color,
                           image: "none",
                         })

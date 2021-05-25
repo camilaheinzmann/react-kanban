@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Topbar from "../Topbar";
 import SideMenu from "../SideMenu";
 
-export default function Navigation({ setBackground, background }) {
+export default function Navigation({ changeBackground, background }) {
   const [openSideMenu, setOpenSideMenu] = useState(false);
 
   return (
@@ -11,7 +11,7 @@ export default function Navigation({ setBackground, background }) {
       <SideMenu
         openSideMenu={openSideMenu}
         setOpenSideMenu={setOpenSideMenu}
-        setBackground={setBackground}
+        changeBackground={changeBackground}
         background={background}
       />
     </div>

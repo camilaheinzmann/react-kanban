@@ -16,7 +16,7 @@ export default function InputContainer({ listId, type }) {
       <Collapse in={!open}>
         <div className="input-content">
           <button onClick={() => setOpen(!open)}>
-            {type === "card" ? "+ Add a Card" : "+ Add another List"}
+            {type === "card" ? "+ Add Card" : "+ Add List"}
           </button>
         </div>
       </Collapse>
