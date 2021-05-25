@@ -6,7 +6,7 @@ import Navigation from "./components/Navigation";
 import "./styles/global.scss";
 
 const defaultBackground = {
-  color: "blue",
+  color: "pink",
   image: "none",
 };
 
