@@ -46,7 +46,7 @@ export default function Home() {
       },
     };
     setData(newState);
-    window.localStorage.setItem("dataKanban", JSON.stringify(data));
+    window.localStorage.setItem("dataKanban", JSON.stringify(newState));
   };
 
   const removeCard = (index, listId) => {
@@ -62,7 +62,7 @@ export default function Home() {
       },
     };
     setData(newState);
-    window.localStorage.setItem("dataKanban", JSON.stringify(data));
+    window.localStorage.setItem("dataKanban", JSON.stringify(newState));
   };
 
   const updateCardTitle = (title, index, listId) => {
@@ -77,7 +77,7 @@ export default function Home() {
       },
     };
     setData(newState);
-    window.localStorage.setItem("dataKanban", JSON.stringify(data));
+    window.localStorage.setItem("dataKanban", JSON.stringify(newState));
   };
 
   const addMoreList = (title) => {
@@ -101,7 +101,7 @@ export default function Home() {
     };
 
     setData(newState);
-    window.localStorage.setItem("dataKanban", JSON.stringify(data));
+    window.localStorage.setItem("dataKanban", JSON.stringify(newState));
   };
 
   const updateListTitle = (title, listId) => {
@@ -117,7 +117,7 @@ export default function Home() {
     };
 
     setData(newState);
-    window.localStorage.setItem("dataKanban", JSON.stringify(data));
+    window.localStorage.setItem("dataKanban", JSON.stringify(newState));
   };
 
   const deleteList = (listId) => {
@@ -134,7 +134,7 @@ export default function Home() {
     };
 
     setData(newState);
-    window.localStorage.setItem("dataKanban", JSON.stringify(data));
+    window.localStorage.setItem("dataKanban", JSON.stringify(newState));
   };
 
   const onDragEnd = (result) => {
@@ -155,7 +155,7 @@ export default function Home() {
         listIds: newListIds,
       };
       setData(newState);
-      window.localStorage.setItem("dataKanban", JSON.stringify(data));
+      window.localStorage.setItem("dataKanban", JSON.stringify(newState));
 
       return;
     }
@@ -178,7 +178,7 @@ export default function Home() {
         },
       };
       setData(newState);
-      window.localStorage.setItem("dataKanban", JSON.stringify(data));
+      window.localStorage.setItem("dataKanban", JSON.stringify(newState));
     } else {
       sourceList.cards.splice(source.index, 1);
       destinationList.cards.splice(destination.index, 0, draggingCard);
@@ -193,7 +193,7 @@ export default function Home() {
       };
 
       setData(newState);
-      window.localStorage.setItem("dataKanban", JSON.stringify(data));
+      window.localStorage.setItem("dataKanban", JSON.stringify(newState));
     }
   };
 
