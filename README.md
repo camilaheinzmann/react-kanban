@@ -1,5 +1,11 @@
 # React Kanban - Trello Clone
 
+![CamKanban Screen](https://github.com/camilaheinzmann/react-kanban/blob/main/src/assets/img/react-camkanban.png "React CamKanban")
+
+## Deploy
+
+This project is deployed [here](https://react-camkanban.netlify.app/).
+
 ## How to run
 
 Register at [Unsplash API](https://unsplash.com/developers) and get your *AccessKey*. 
