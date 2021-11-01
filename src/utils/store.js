@@ -1,4 +1,4 @@
-const data = {
+const store = {
   lists: {
     "list-1": {
       id: "list-1",
@@ -24,4 +24,4 @@ const data = {
   listIds: ["list-1", "list-2", "list-3"],
 };
 
-export default data;
+export default store;

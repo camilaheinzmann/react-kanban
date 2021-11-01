@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import { KanbanContextProvider } from "./utils/storeApi";
 import Home from "./pages/Home";
 import Navigation from "./components/Navigation";
 
@@ -39,15 +40,20 @@ export default function App() {
   }
 
   return (
-    <div
-      style={{
-        backgroundColor: background.color,
-        backgroundImage: background.image,
-        backgroundSize: "cover",
-      }}
-    >
-      <Navigation changeBackground={changeBackground} background={background} />
-      <Home />
-    </div>
+    <KanbanContextProvider>
+      <div
+        style={{
+          backgroundColor: background.color,
+          backgroundImage: background.image,
+          backgroundSize: "cover",
+        }}
+      >
+        <Navigation
+          changeBackground={changeBackground}
+          background={background}
+        />
+        <Home />
+      </div>
+    </KanbanContextProvider>
   );
 }

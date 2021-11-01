@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Clear } from "@material-ui/icons";
 
-import storeApi from "../../utils/storeApi";
+import { StoreApi } from "../../utils/storeApi";
 
 import "./styles.scss";
 
 export default function InputCard({ setOpen, listId, type }) {
-  const { addMoreCard, addMoreList } = useContext(storeApi);
+  const { addMoreCard, addMoreList } = useContext(StoreApi);
   const [title, setTitle] = useState("");
 
   const handleOnChange = (e) => {

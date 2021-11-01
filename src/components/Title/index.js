@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { MoreVert } from "@material-ui/icons";
 import ClickOutHandler from "react-onclickout";
 
-import storeApi from "../../utils/storeApi";
+import { StoreApi } from "../../utils/storeApi";
 
 import "./styles.scss";
 
@@ -10,7 +10,7 @@ export default function Title({ title, listId }) {
   const [open, setOpen] = useState(false);
   const [openOptions, setOpenOptions] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
-  const { updateListTitle, deleteList } = useContext(storeApi);
+  const { updateListTitle, deleteList } = useContext(StoreApi);
 
   const handleOnBlur = () => {
     updateListTitle(newTitle, listId);
